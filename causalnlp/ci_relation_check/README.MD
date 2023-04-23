@@ -34,3 +34,16 @@ def calcAllCI(Graph)
 ```python
 def checkCI(x, y, z, CI_list = None, Graph = None)
 ```
+
+### functions to execute adjustment
+
+```python
+def generate_all_backdoor_set(graph, treatment = None, effect = None)
+# return a list of adjustment set/ dict of (treatment, effect)->List of adjustment set
+def check_backdoor_set(graph, adjustment_set, treatment, effect)
+# return true or false to check whether an adjustment set is valid
+def generate_all_frontdoor_set(graph, treatment = None, effect = None)
+def check_frontdoor_set(graph, adjustment_set, treatment, effect)
+```
+
+Can simply run the example code under `__main__` section under `adjustment_graph.py` to see the usage.

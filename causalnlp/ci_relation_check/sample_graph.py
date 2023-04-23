@@ -43,3 +43,45 @@ sample_graph6 = """
 x->y
 z->y
 """
+
+sample_graph7 = """
+x->mediator
+mediator->y
+confounder->y
+confounder->x
+"""
+
+sample_graph8 = """
+x->mediator
+mediator->y
+confounder1->y
+confounder2->x
+confounder1->confounder2
+"""
+
+sample_graph8 = """
+x->mediator
+mediator->y
+confounder1->y
+confounder2->x
+confounder1->confounder2
+"""
+
+sample_graph9 = """
+x->mediator
+mediator->y
+confounder1->y
+confounder2->x
+confounder1->confounder3
+confounder2->confounder3
+"""
+
+sample_graph10 = """
+x->mediator1
+x->mediator2
+mediator1->mediator3
+mediator2->mediator3
+mediator3->y
+confounder->y
+confounder->x
+"""

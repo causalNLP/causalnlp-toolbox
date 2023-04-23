@@ -35,14 +35,17 @@ def generate_graph(s, output_file = "graph.txt"):
             node_name1, node_name2 = i.split("->")[0], i.split("->")[1]
             edge_list.append([get_ids(node_name1), get_ids(node_name2)])
 
-    with open(output_file, "w") as f:
-        print(nodes, len(edge_list), file=f)
-        for i in edge_list:
-            print(i[0], i[1], file=f)
-        print(hidden_variables, file=f)
-        print(hidden_variables_list, file=f)
-    #print(node_dict)
-    return node_dict, hidden_variables_list
+    if (output_file == None):
+        return node_dict, hidden_variables_list, nodes, edge_list
+    else:
+        with open(output_file, "w") as f:
+            print(nodes, len(edge_list), file=f)
+            for i in edge_list:
+                print(i[0], i[1], file=f)
+            print(hidden_variables, file=f)
+            print(hidden_variables_list, file=f)
+        #print(node_dict)
+        return node_dict, hidden_variables_list
 
 def generate_graph_str(causal_relation, corr_relation = None):
     node_dict = {}
